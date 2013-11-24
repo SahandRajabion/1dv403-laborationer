@@ -2,14 +2,45 @@
 
 window.onload = function(){
 
+
+var i = 0; //Deklerar varibel
+var resultat = ''; // Deklerar variabel
+var Aa = /a/ig; // Deklerar varibel som gäller både A och a.
+
+
 	// I denna funktion ska du skriva koden för att hantera "spelet"
 	var convertString = function(str){
-		// Plats för förändring.		
-		// Returnera den konverterade strängen.
-		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
-	
+   
+   
+    //Om input är tom visas ett fel meddelande.
+  
+    if(str===""){
+        throw{message:"Fel! Du måste ange något innan omvandling!"};
+    }
 
 
+// Plats för förändring.
+// For loop
+for (i = 0; i < str.length; i++) {
+   
+    // Om bokstaven är stor, ändra den till liten och alla A och a ändras till "#".
+     if (str.charAt(i)===str.charAt(i).toUpperCase()) {
+       resultat += str.charAt(i).toLowerCase();
+       str = str.replace(Aa, "#");
+
+       
+    }
+    // Om bokstaven är liten, ändra den till stor och alla A och a ändras till "#".
+    else{
+       resultat += str.charAt(i).toUpperCase();
+       str = str.replace(Aa, "#");
+    }
+   
+}
+
+// Returnera den konverterade strängen resultat.
+ alert (resultat);
+return resultat;
 
 
 

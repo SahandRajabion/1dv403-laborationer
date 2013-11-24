@@ -3,39 +3,39 @@
 window.onload = function(){
 	
 	var secret =Math.floor( Math.random(secret) * 100)+1; // Detta tal behöver bytas ut mot ett slumpat tal.
-	var input = 0; 
+	var counter = 0; 
 	// I denna funktion ska du skriva koden för att hantera "spelet"
 	
 	var guess = function(number){
 		console.log("Det hemliga talet: " + secret); // Du når den yttre variabeln secret innifrån funktionen.
 		console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
-			
+	    number = parseInt(number);
 		// Plats för förändring.
-       input++;
+       counter++;
            
             // [false, "Talet är utanför intervallet 0 - 100"]	
             if (number > 100 || number < 0)
-            alert("Talet är utanför intervallet 0 - 100");
+                return [false, "Talet är utanför intervallet 0 - 100"];
            
             else{
                 
             // [true, "Grattis du vann! Det hemliga talet var X och du behövde Y gissningar för att hitta det."]
             if (number === secret) 
-            alert("Grattis du vann! Det hemliga talet var" +(secret)+ "och du behövde" +(input)+ "gissningar för att hitta det."); 
+                return [true, "Grattis du vann! Det hemliga talet " + secret + "och du behövde" + counter + "gissningar för att hitta det."]; 
                 
                 
             // [false, "Det hemliga talet är högre!"]
-            if (number < secret)
-            alert("Det hemliga talet är högre!");
+            else if (number < secret)
+                return [false, "Det hemliga talet är högre"];
             
        
             // [false, "Det hemliga talet är lägre!"]
-            if (number > secret)
-            alert("Det hemliga talet är lägre!");
+            else if (number > secret)
+                return [false, "Det hemliga talet är lägre!"];
             
-            if (isNaN(number))
-            alert("Ange siffor!");
-
+            else if (isNaN(number))
+            
+                return [false, "Ange siffror"];
             }
               
             };
@@ -60,6 +60,7 @@ window.onload = function(){
 		e.preventDefault(); // Hindra formuläret från att skickas till servern. Vi hanterar allt på klienten.
 
 		var answer = guess(input.value) // Läser in talet från textrutan och skickar till funktionen "guess"
+		console.log(answer);
 		p.innerHTML = answer[1];		// Skriver ut texten från arrayen som skapats i funktionen.	
 
 		if(answer[0] === true){				// Om spelet är slut, avaktivera knappen.
