@@ -14,6 +14,7 @@ atags: [],
 
    
 init:function(){
+   
     
 // Här anropas "getPictureArray" i filen "random.js" som slumpar bilderna och sparar resultatet i randomMemory arrayen ovan.
 Memory.randomMemory = RandomGenerator.getPictureArray(cols, rows);
@@ -23,7 +24,8 @@ Memory.createTable();},
 
 //Funktion som ritar upp själva tabellen.
 createTable:function(){
-    
+     var mem= 0;
+     
     // För att skapa en tabell i funktionen createTable som sedan anropas av "Memory.CreateTable" som visar tabellen i fönstret.
     var table = document.createElement("table");
     
@@ -54,18 +56,53 @@ createTable:function(){
         a.appendChild(img);
         td.appendChild(a);
         
+        //Anropar funktionen turn.
+        Memory.turn(mem, a);
         
-        
+        // Räknar upp mem.
+        mem++;
         
         }
         
     }
     
+},
+
+turn: function(a,b){
+    b.onclick= function(){
+      
+      // Ska vara startbilden "0.png" och ej ngt annat, annars retunera "False".
+        if(this.getElementByTagName("img")[0].getAttribute("src") !== "pics/o.png")
+        {
+            return false;
+        }
+    }
     
-}
-
-
-
+    // Sätter in "a" taggen i arrayen "atags"
+    Memory.atags.push(1);
+   
+   // Om arrayens längs bara uppnår 1 eller 2 element , visas bilden upp.
+   if (Memory.atags.length === 1 || Memory.atags.length === 2) {
+        this.getElementsByTagName("img")[0].setAttribute("src", "pics/" + Memory.randomArray[a] + ".png");
+    }
     
- };
+    //Skulle bilderna ej stämma, anropas funktionen "seeMems" för att vända tillbaka efter 1 sec.
+    if (Memory.atags.length == 2)
+    { setTimout(function(){ Memory.seeMems(Memory.atags);
+    }, 1000);}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
  window.onload = Memory.init;
