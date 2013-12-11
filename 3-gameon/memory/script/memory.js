@@ -6,9 +6,11 @@ var Memory= {
     
     
     
-// Array som används som egenskap i objektet som refererar till den array med de slumpade resultaten. 
+// Array som används som egenskap i objektet som refererar till den array med de slumpade resultaten, här de kommer lagras. 
 randomMemory: [],
 
+//Array som lagrar alla a-taggat.
+atags: [],
 
    
 init:function(){
@@ -42,8 +44,15 @@ createTable:function(){
         var td = document.createElement("td");
         tr.appendChild(td);
         
+        // Skapar "img" taggen och tilldelar den, den första bilden i mappen pics (0.png).
+        var img = document.createElement("img");
+        img.setAttribute("src", "pics/0.png");
         
-        
+        //Skapar a taggen, sätter sedan in "img" taggen i "a" taggen, därefter sätter in "a" taggen i "td" taggen.
+        var a = document.createElement("a");
+        a.setAttribute("href","#");
+        a.appendChild(img);
+        td.appendChild(a);
         
         
         
