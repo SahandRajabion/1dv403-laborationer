@@ -1,0 +1,48 @@
+body
+{
+background-image:url("pics/wew.jpg");
+}
+
+h1
+{color:white;
+    margin-top:100px;
+padding-left:740px;
+font-family: times;    
+}
+
+#memoryBoard{padding-left:800px;margin-top:80px;}
+
+
+
+img
+{
+background-color:blue;
+padding: 10px 10px 10px 10px;
+}
+
+img:hover
+{
+-ms-transform: scale(1.1);    
+-webkit-transform: scale(1.1);
+-moz-transform: scale(1.1);
+-o-transform: scale(1.1);
+transform: scale(1.1);
+}
+
+a:focus
+{
+-ms-transform: scale(1.1);    
+-webkit-transform: scale(1.1);
+-moz-transform: scale(1.1);
+-o-transform: scale(1.1);
+transform: scale(1.1);
+}
+
+
+footer p
+{color:white;
+padding-left:790px;    
+    
+width: 250px;    
+font-family: times;
+}
