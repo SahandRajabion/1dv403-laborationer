@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+<meta charset="UTF-8" />
+<title>Formulär - Validering - L04 - Javascript</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+</head>
+
+<body>
+<div id="container">
+
+<main>
+<p><b>L04 - Validering - Jaxascript - Webbteknik I</b></p>
+<form id="form" name="form" method="post" action="http://voyager.lnu.se/tekinet/kurser/dtt/wp_webbteknik/process_form.php">
+
+<fieldset style="width: 450px;" id="formular">
+<legend>FORMULÄR FÖR ATT SKICKA MEDDELANDE</legend>
+
+<label for="Förnamn">Förnamn:</label> <br />
+<input type="text" placeholder="Förnamn" name="Förnamn" id="Förnamn" /> <br />
+<span id="first"></span>
+
+<label for="Efternamn">Efternamn:</label> <br />
+<input type="text" placeholder="Efternamn"name="Efternamn" id="Efternamn" /> <br />
+
+<label for="Postnummer">Postnummer:</label> <br />
+<input type="number"placeholder="Postnummer" name="Postnummer" id="Postnummer" /> <br />
+
+
+<label for="Epost">E-postadress:</label> <br />
+<input type="text" placeholder="Epost"name="Epost" id="Epost" /> <br />
+
+<label for="Pris">Prismodell</label><br />
+<select name="Pris" id="Pris">
+  <option value="Låg">Låg</option>
+  <option value="Medel">Medel</option>
+  <option value="Hög">Hög</option>
+  
+</select><br>
+<label for="skicka"></label>
+<input type="submit" name="skicka" id="skicka" value="Skicka meddelandet" />
+
+</fieldset>
+
+</form>
+
+<p>Sidan skapad av Sahand Rajabion</p>
+
+</main>
+
+</div>
+<script type="text/javascript" src="formular.js"></script>
+</body>
+</html>

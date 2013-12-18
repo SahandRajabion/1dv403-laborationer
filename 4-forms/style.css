@@ -1,0 +1,34 @@
+body
+{
+background-image:url("pics/asds.jpg"); 
+       
+      
+}
+
+p{ font-family: 'Tangerine', serif;
+        font-size: 48px; color: white; margin-left:593px; margin-top:150px;}
+
+legend{color:white;}
+label{color:white;}
+fieldset{margin-left:650px;margin-top:50px;}
+
+ .error
+{
+border: 1px solid red;
+}
+
+.valid
+{
+border: 1px solid green;
+}
+
+
+
+.failedMessage
+{
+color: red;
+position: absolute;
+margin-left: 310px;
+margin-top: -27px;
+width: 200px;
+}
