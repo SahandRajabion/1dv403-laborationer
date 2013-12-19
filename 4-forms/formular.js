@@ -125,13 +125,103 @@ var Validator = {
                      document.getElementById("nummer").appendChild(div);
                      
                      var text = document.createTextNode("Felaktigt postnummer, försök igen!");
-                     div.appendchild(text);
+                     div.appendChild(text);
                      
                  }
          
                  }
 
                  };
+             
+             
+             email.onblur = function(){
+                 if (!form.elements["Epost"].value.match(/^[\w]+(\.[\w]+)*@([\w]+\.)+[a-z]{2,7}$/i))
+                 { 
+                 form.elements["Epost"].classname="error";
+                 Validator.mejl= false;
+                 
+                  if(!document.getElementById("mejl").hasChildNodes()){
+                     var div =document.CreateElement("div");
+                     div.classname= "failedMessage";
+                     document.getElementById("mejl").appendChild(div);
+                     
+                     var text = document.createTextNode("Felaktig epost-adress, försök igen!");
+                     div.appendChild(text);
+                     
+                  }
+                 }
+                  
+                  else {
+                  form.elements["Epost"].classname="valid";
+                 Validator.mejl=true;
+                 
+                 var elements = document.getElementById("mejl");
+                 while(elements.firstChild){
+                     elements.removieChild(elements.firstChild);
+                 }
+                 }
+                 };
+                 
+                 
+                 
+                 button.onclick = function (){
+                     
+                     if ((Validator.first ===false)|| (Validator.last===false)||(Validator.nummer===false)||(Validator.mejl===false))
+                     {
+                         
+                         return false;
+                         
+                     }
+                     
+                     else{
+                         
+                         return true;
+                     }
+                     
+                     
+                     
+                     
+                 };
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+         
+         
+         
+         
+         
+                 }
+
+                 };
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
              
              
     
