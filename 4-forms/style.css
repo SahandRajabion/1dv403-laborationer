@@ -12,23 +12,29 @@ legend{color:white;}
 label{color:white;}
 fieldset{margin-left:650px;margin-top:50px;}
 
- .error
-{
-border: 1px solid red;
-}
-
-.valid
-{
-border: 1px solid green;
-}
 
 
-
-.failedMessage
+failedMessage
 {
 color: red;
 position: absolute;
 margin-left: 310px;
 margin-top: -27px;
 width: 200px;
+}
+
+input.error
+{
+border: 1px solid red;
+}
+
+input.valid
+{
+border: 1px solid green;
+}
+
+input
+{
+    margin-bottom: 3px;
+    padding: 5px;
 }
