@@ -5,36 +5,116 @@ background-image:url("pics/asds.jpg");
       
 }
 
-p{ font-family: 'Tangerine', serif;
-        font-size: 48px; color: white; margin-left:593px; margin-top:150px;}
+p{  font-family: 'Tangerine', serif;
+        font-size: 48px; color: black;  margin-top:10px;}
 
 legend{color:white;}
 label{color:white;}
 fieldset{margin-left:650px;margin-top:50px;}
 
+#skicka
+{
+    
+border: 1px white; 
+font-weight: bolder;
+color: white;
+background-color: Blue;  
+float: right;
+border-radius: 10px;
+}
 
 
-failedMessage
+.failedMessage
 {
 color: red;
 position: absolute;
-margin-left: 310px;
-margin-top: -27px;
-width: 200px;
+margin-left: 300px;
+margin-top: -25px;
+
 }
 
-input.error
+
+.error
 {
-border: 1px solid red;
+border: 2px solid red;
 }
 
-input.valid
+.valid
 {
-border: 1px solid green;
+border: 2px solid green;
 }
 
-input
+
+
+
+.winBackground{
+position: fixed;
+left: 0px;
+top: 0px;
+background-color: black;
+width: 100%;
+height: 100%;
+opacity: 0.5;
+}
+
+.popup 
 {
-    margin-bottom: 3px;
-    padding: 5px;
+display: block;
+position: absolute;
+left: 35%;
+top: 20%;
+background-color: #FFF;
+width: auto;
+height: auto;
+padding: 30px;
+border: 2px solid #666;
+opacity: 0.9;
+box-shadow: #fff 5px 0px 30px 5px;
+
+}
+
+h5
+{
+    margin-top: 10px;
+    font-family: 'Balthazar', serif;
+    font-size: 32px;
+}
+
+p
+{
+word-wrap:break-word;
+font-family: 'Oranienbaum', serif;
+font-size: 18px;
+width: 360px;
+
+}
+
+.popup send
+{
+
+margin-left: 10px;
+border-radius: 15px;    
+padding: 5px;  
+background-color: gray;    
+color: black;    
+font-weight: bold;
+border: none;
+margin-top: 15px;
+}
+
+.popup close
+{
+margin-left: 10px;
+border-radius: 15px;    
+padding: 5px;  
+background-color: gray;    
+color: black;    
+font-weight: bold;
+border: none;
+margin-top: 15px;
+}
+.popup close:hover, send:hover
+{
+background-color:rgb(88,88,88);
+color: white;
 }
